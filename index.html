@@ -4,9 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Example Page</title>
+    <!-- Import Google Font (e.g., Roboto) -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 
     <style>
+        /* Basic styles for the page */
         body {
             font-family: 'Roboto', sans-serif;
             margin: 0;
@@ -15,34 +17,48 @@
             background-color: #f4f4f4;
         }
         
+        /* Style for the big text */
         .big-text {
             font-size: 50px;
             font-weight: bold;
             margin-top: 50px;
         }
         
+        /* Style for the smaller text */
         .small-text {
             font-size: 20px;
             margin-top: 10px;
             color: #555;
         }
         
+        /* Style for the iframe container */
         .iframe-container {
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 80vh; 
+            height: 80vh; /* Takes up most of the viewport height */
+            overflow: hidden; /* Hides any content that exceeds the container */
+            padding-bottom: 5px; /* Hides the bottom 5px */
+        }
+
+        iframe {
+            height: calc(100% + 5px); /* Increase iframe height by 5px to hide the bottom part */
+            width: 100%;
+            border: none;
         }
     </style>
 </head>
 <body>
 
-    <div class="big-text">Sigma</div>
+    <!-- Big text at the top -->
+    <div class="big-text">Example</div>
     
-    <div class="small-text">made by hamid</div>
+    <!-- Smaller text below -->
+    <div class="small-text">Example</div>
 
+    <!-- Iframe in the center -->
     <div class="iframe-container">
-        <iframe src="https://deadsimplechat.com/GPS9P9EKr" width="100%" height="600px"></iframe>
+        <iframe src="https://deadsimplechat.com/GPS9P9EKr"></iframe>
     </div>
 
 </body>
