@@ -39,6 +39,25 @@
             height: 100%;
             border: none;
         }
+
+        /* Button styling */
+        .fps-button {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            padding: 10px 20px;
+            background-color: #333;
+            color: white;
+            border: none;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            z-index: 10;
+        }
+
+        .fps-button:hover {
+            background-color: #555;
+        }
     </style>
 </head>
 <body>
@@ -49,6 +68,25 @@
     <div class="iframe-container">
         <iframe src="https://deadsimplechat.com/GPS9P9EKr"></iframe>
     </div>
+
+    <!-- Show FPS Button -->
+    <button class="fps-button" id="showFPSButton">Show FPS</button>
+
+    <script>
+        document.getElementById('showFPSButton').addEventListener('click', function() {
+            var script = document.createElement('script');
+            script.onload = function() {
+                var stats = new Stats();
+                document.body.appendChild(stats.dom);
+                requestAnimationFrame(function loop() {
+                    stats.update();
+                    requestAnimationFrame(loop);
+                });
+            };
+            script.src = 'https://mrdoob.github.io/stats.js/build/stats.min.js';
+            document.head.appendChild(script);
+        });
+    </script>
 
 </body>
 </html>
